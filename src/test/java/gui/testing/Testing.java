@@ -2,7 +2,7 @@ package gui.testing;
 
 import gui.testing.commo.AppTestCase;
 import gui.testing.commo.GlobalVars;
-import gui.testing.commo.ScreenshotComparer;
+import gui.testing.commo.compare.ScreenshotComparer;
 
 import org.assertj.swing.finder.JOptionPaneFinder;
 import org.assertj.swing.fixture.JOptionPaneFixture;
@@ -15,7 +15,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
-import static gui.testing.common.ScreenshotHelper.takeScreenshot;
+import static gui.testing.commo.ScreenshotHelper.takeScreenshot;
 
 public class Testing extends AppTestCase {
 
