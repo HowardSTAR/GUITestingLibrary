@@ -1,4 +1,4 @@
-package gui.testing.common;
+package gui.testing.commo;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -6,9 +6,22 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * Этот класс предоставляет методы для создания скриншотов компонентов GUI,
+ * загрузки изображений из файловой системы и генерации путей к файлам для сохранения разностных изображений.
+ */
 public class ScreenshotHelper {
 
-    // Modified to include a savePath parameter for flexibility
+    /**
+     * Делает скриншот указанного компонента и сохраняет его по указанному пути с заданным именем.
+     *
+     * @param component Компонент GUI для создания скриншота.
+     * @param nameScreenShot Имя файла скриншота без расширения файла.
+     * @param savePath Путь к каталогу, в котором будет сохранен снимок экрана.
+     * @return Объект File, представляющий сохраненный файл скриншота.
+     * @throws AWTException Если конфигурация платформы не позволяет низкоуровневый захват экрана.
+     * @throws IOException Если произошла ошибка при записи файла скриншота на диск.
+     */
     public static File takeScreenshot(Component component, String nameScreenShot, String savePath) throws AWTException, IOException {
         Rectangle captureRect = component.getBounds();
         Point locationOnScreen = component.getLocationOnScreen();
@@ -17,14 +30,19 @@ public class ScreenshotHelper {
         Robot robot = new Robot();
         BufferedImage capturedImage = robot.createScreenCapture(captureRect);
 
-        // Use provided savePath for saving the screenshot
         File screenshotFile = new File(savePath + File.separator + nameScreenShot + ".png");
         ImageIO.write(capturedImage, "PNG", screenshotFile);
 
         return screenshotFile;
     }
 
-    // Example utility method for loading an image from a file
+    /**
+     * Загружает изображение из указанного пути к файлу в память в виде BufferedImage.
+     *
+     * @param filePath Путь к файлу изображения для загрузки.
+     * @return Объект BufferedImage, представляющий загруженное изображение.
+     * @throws IOException Если во время чтения файла произошла ошибка.
+     */
     public static BufferedImage loadImage(String filePath) throws IOException {
         return ImageIO.read(new File(filePath));
     }
