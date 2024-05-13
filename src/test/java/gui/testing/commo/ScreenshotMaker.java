@@ -30,6 +30,7 @@ public class ScreenshotMaker {
                                                 BufferedImage referenceImage, String diffImagePath) {
         }
     };
+
     /**
      * Map, содержащая ассоциации между классами компонентов и их соответствующими создателями скриншотов.
      */
@@ -65,9 +66,9 @@ public class ScreenshotMaker {
         if (!screenshotComparer.compareImages(currentScreenshot, referenceImage)) {
             String diffImagePath = generateDiffImagePath(component);
             screenshotComparer.highlightDifferencesAndSave(currentScreenshot, referenceImage, diffImagePath);
-            System.out.println("Differences saved to: " + diffImagePath);
+            System.out.println("Различия сохраняются до: " + diffImagePath);
         } else {
-            System.out.println("No differences detected.");
+            System.out.println("Различий не обнаружено.");
         }
     }
 }

@@ -43,8 +43,10 @@ public class ExtendedScreenshotComparer extends ScreenshotComparer {
      * @param diffImagePath путь, по которому должно быть сохранено результирующее изображение разницы.
      */
     @Override
-    public void highlightDifferencesAndSave(BufferedImage currentScreenshot, BufferedImage referenceImage, String diffImagePath) {
-        BufferedImage diffImage = new BufferedImage(currentScreenshot.getWidth(), currentScreenshot.getHeight(), BufferedImage.TYPE_INT_ARGB);
+    public void highlightDifferencesAndSave(BufferedImage currentScreenshot, BufferedImage referenceImage,
+                                            String diffImagePath) {
+        BufferedImage diffImage = new BufferedImage(currentScreenshot.getWidth(), currentScreenshot.getHeight(),
+                BufferedImage.TYPE_INT_ARGB);
         Graphics g = diffImage.getGraphics();
         g.setColor(Color.RED);
         g.fillRect(0, 0, diffImage.getWidth(), diffImage.getHeight());

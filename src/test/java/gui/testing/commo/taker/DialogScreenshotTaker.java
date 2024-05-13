@@ -25,10 +25,12 @@ public class DialogScreenshotTaker implements IScreenshotTaker {
      * идентификатора.
      *
      * @param component компонент диалога для захвата на скриншоте.
+     * @return
      */
     @Override
-    public void setComponent(Component component) {
+    public Component setComponent(Component component) {
         this.component = component;
+        return component;
     }
 
     /**

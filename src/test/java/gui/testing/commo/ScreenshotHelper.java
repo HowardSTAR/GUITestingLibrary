@@ -52,7 +52,8 @@ public class ScreenshotHelper {
      *
      * @param component Компонент, для которого генерируется путь к diff-изображению.
      * @return Полный путь к файлу diff-изображения.
-     */    public static String generateDiffImagePath(Component component) {
+     */
+    public static String generateDiffImagePath(Component component) {
         // Define a base directory for diff images. This could be configurable elsewhere.
         String diffImagesBaseDir = System.getProperty("user.home") + File.separator + "diffImages";
 

@@ -28,10 +28,12 @@ public class ButtonScreenshotTaker implements IScreenshotTaker {
      * кнопкой или аналогичным элементом пользовательского интерфейса, который может быть визуально представлен на скриншоте.
      *
      * @param component компонент пользовательского интерфейса, который нужно захватить на скриншоте.
+     * @return
      */
     @Override
-    public void setComponent(Component component) {
+    public Component setComponent(Component component) {
         this.component = component;
+        return component;
     }
 
     /**

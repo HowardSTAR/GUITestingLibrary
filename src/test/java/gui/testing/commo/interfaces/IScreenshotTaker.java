@@ -13,8 +13,9 @@ public interface IScreenshotTaker {
      * Этот метод должен быть вызван перед попыткой сделать скриншот.
      *
      * @param component Компонент AWT или Swing для создания скриншотов.
+     * @return
      */
-    void setComponent(Component component);
+    Component setComponent(Component component);
 
     /**
      * Делает скриншот ранее установленного компонента.
